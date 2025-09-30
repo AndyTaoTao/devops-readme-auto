@@ -6,7 +6,3 @@ This section is automatically updated by a GitHub Actions workflow to reflect re
 
 <!--START_SECTION:activity-->
 <!--END_SECTION:activity-->
-
-
-
-<!-- Trigger workflow manually -->
