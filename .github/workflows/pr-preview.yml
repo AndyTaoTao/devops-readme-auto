@@ -4,6 +4,10 @@ on:
   pull_request:
     branches: [ "**" ]
 
+permissions:
+  pull-requests: write
+  contents: read
+
 jobs:
   preview:
     runs-on: ubuntu-latest
@@ -12,11 +16,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run README update script
-        run: |
-          echo "Simulating README update..."
-          # 這裡可以呼叫你原本的 update-readme.yml 裡的邏輯
-          # 例如 node scripts/update-readme.js
-          # 或者直接複製 update-readme.yml 的核心步驟
+        run: echo "Simulating README update..."
 
       - name: Show preview in PR comment
         uses: marocchino/sticky-pull-request-comment@v2
