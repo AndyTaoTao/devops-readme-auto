@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Generate activity list
-        uses: Readme-Workflows/recent-activity@v2
+        uses: readme-activity/recent-activity@v2
         with:
           GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
 
