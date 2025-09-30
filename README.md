@@ -20,5 +20,4 @@ This section is automatically updated by a GitHub Actions workflow to reflect re
 
 <!--END_SECTION:activity-->
 
-
 <!-- Smart Commit FINISH test -->

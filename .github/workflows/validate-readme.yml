@@ -1,0 +1,35 @@
+name: Validate README markers
+
+on:
+  push:
+    branches: [ "**" ]
+  pull_request:
+    branches: [ "**" ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Ensure README exists
+        run: |
+          test -f README.md || (echo "README.md not found" && exit 1)
+
+      - name: Check START marker
+        run: |
+          grep -q "<!--START_SECTION:activity-->" README.md || (echo "❌ Missing START marker" && exit 1)
+
+      - name: Check END marker
+        run: |
+          grep -q "<!--END_SECTION:activity-->" README.md || (echo "❌ Missing END marker" && exit 1)
+
+      - name: Ensure START appears before END
+        run: |
+          start_line=$(grep -n "<!--START_SECTION:activity-->" README.md | cut -d: -f1 || echo 0)
+          end_line=$(grep -n "<!--END_SECTION:activity-->" README.md | cut -d: -f1 || echo 0)
+          if [ "$start_line" -eq 0 ] || [ "$end_line" -eq 0 ] || [ "$start_line" -gt "$end_line" ]; then
+            echo "❌ Marker order invalid: START must come before END"
+            exit 1
+          fi
