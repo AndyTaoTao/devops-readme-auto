@@ -1,7 +1,7 @@
 # devops-readme-auto
 A demo repository for auto-updating README via GitHub Actions and Jira integration.
 
-[![Validate README markers](https://github.com/AndyTaoTao/devops-readme-auto/actions/workflows/validate-readme.yml/badge.svg)](https://github.com/AndyTaoTao/devops-readme-auto/actions/workflows/validate-readme.yml)
+[![Validate README markers](https://github.com/AndyTaoTao/devops-readme-auto/actions/workflows/validate-readme.yml/badge.svg?branch=SWAP-23-badge-monitor)](https://github.com/AndyTaoTao/devops-readme-auto/actions/workflows/validate-readme.yml)
 
 ##  Recent Activity
 This section is automatically updated by a GitHub Actions workflow to reflect recent repository activity.
