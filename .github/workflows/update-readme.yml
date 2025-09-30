@@ -1,29 +1,44 @@
-name: Update README with Recent Activity
+name: Update README with recent activity
 
 on:
-  push:
-    branches:
-      - main
   schedule:
-    - cron: '0 0 * * *' 
+    - cron: '0 0 * * *'  
+  workflow_dispatch: {}   
+
+permissions:
+  contents: write    
+  issues: read       
+  pull-requests: read 
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Generate activity list
-        uses: Readme-Workflows/recent-activity@v2.4.1
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
+          node-version: '20'
 
-      - name: Commit updated README
+      - name: Generate recent activity and update README
+        env:
+          GH_OWNER: ${{ github.repository_owner }}
+          GH_REPO: ${{ github.event.repository.name }}
+          GH_TOKEN: ${{ secrets.REPO_TOKEN }}
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/update-readme.mjs
+
+      - name: Commit updated README if changed
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md
           git commit -m "📄 Update README with recent activity"
           git push
-
