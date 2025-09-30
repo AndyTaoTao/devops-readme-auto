@@ -20,10 +20,4 @@ This section is automatically updated by a GitHub Actions workflow to reflect re
 <!--END_SECTION:activity-->
 
 
-<!-- Smart Commit test update -->
-# devops-readme-auto (Smart Commit Demo)
-_This line was added to trigger Smart Commit demo._
-
-git add README.md
-git commit -m "SWAP-23 #finish Demo: trigger Jira auto-close via Smart Commit"
-git push origin SWAP-23-auto-close
+<!-- Smart Commit FINISH test -->
