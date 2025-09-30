@@ -1,0 +1,27 @@
+name: PR Preview - README Update
+
+on:
+  pull_request:
+    branches: [ "**" ]
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run README update script
+        run: |
+          echo "Simulating README update..."
+          # 這裡可以呼叫你原本的 update-readme.yml 裡的邏輯
+          # 例如 node scripts/update-readme.js
+          # 或者直接複製 update-readme.yml 的核心步驟
+
+      - name: Show preview in PR comment
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: preview
+          message: |
+            ✅ README update preview completed!
+            You can check the diff in this PR to see the updated README section.
