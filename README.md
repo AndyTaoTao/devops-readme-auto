@@ -5,14 +5,14 @@ A demo repository for auto-updating README via GitHub Actions and Jira integrati
 This section is automatically updated by a GitHub Actions workflow to reflect recent repository activity.
 
 <!--START_SECTION:activity-->
-> Updated: 2025-10-01T01:23:18.231Z
+> Updated: 2025-10-02T01:13:35.458Z
 
 ### Commits
+- **Commit:** 0970037 — 📄 Update README with recent activity (2025-10-01)
 - **Commit:** 7e82bf2 — Restore original function (2025-09-30)
 - **Commit:** cf2605f — SWAP-23 test(ci): remove END marker to trigger validation failure (2025-09-30)
 - **Commit:** 0fb5310 — SWAP-23 #finish Demo: trigger Jira auto-close via Smart Commit (#3) (2025-09-30)
 - **Commit:** fe37278 — SWAP-23 #finish Test Smart Commit with correct transition (#2) (2025-09-30)
-- **Commit:** 0c1dffd — Update README.md (2025-09-30)
 
 ### Pull requests
 - **PR:** #4 SWAP-23 Add README marker validation workflow — open (2025-09-30)
