@@ -22,7 +22,7 @@ This section is automatically updated by a GitHub Actions workflow to reflect re
 - **PR:** #2 SWAP-23 Auto-close demo via Smart Commit — merged (2025-09-30)
 
 ### Issues
-<!--END_SECTION:activity-->
 
+<!--END_SECTION:activity-->
 
 <!-- Smart Commit FINISH test -->
